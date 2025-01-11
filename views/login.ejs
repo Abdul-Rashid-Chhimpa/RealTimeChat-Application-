@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Patient DataBase</h1>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Date</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% items.forEach(item => { %>
+                <tr>
+                    <td>
+                        <%= item.firstname %>
+                    </td>
+                    <td>
+                        <%= item.lastname %>
+                    </td>
+                    <td>
+                        <%= item.age %>
+                    </td>
+                    <td>
+                        <%= item.address %>
+                    </td>
+                    <td>
+                        <%= item.date %>
+                    </td>
+
+                    <td>
+                        <button onclick="deleteAppoint()">Delete</button>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+
+</body>
+
+</html>
